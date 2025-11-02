@@ -12,7 +12,7 @@ def test_webhook_updates_booking_paid(client, mocker):
         "end_time": "2025-09-16T11:00:00Z",
         "status": "confirmed"
     }
-    from backend.routes import api as api_module
+    from routes import api as api_module
     api_module.bookings_db.append(booking)
     # Mock event for successful payment
     mock_event = {"type": "checkout.session.completed", "data": {"object": {"id": "cs_test_abc", "client_reference_id": 10}}}
@@ -41,7 +41,7 @@ def test_webhook_updates_booking_failed(client, mocker):
         "end_time": "2025-09-16T13:00:00Z",
         "status": "confirmed"
     }
-    from backend.routes import api as api_module
+    from routes import api as api_module
     api_module.bookings_db.append(booking)
     # Mock event for failed payment
     mock_event = {"type": "checkout.session.async_payment_failed", "data": {"object": {"id": "cs_test_def", "client_reference_id": 11}}}

@@ -45,14 +45,14 @@ if [ "$MODE" = "prod" ]; then
   cd backend
   export PYTHONPATH="$(cd .. && pwd)"
   export FLASK_APP=run.py
-  flask run 2>&1 | tee ../backend.log
+  flask run 2>&1 | tee ../log
 else
   # Development: start Flask, React, and optionally Mobile dev server in parallel
   cd backend
   export PYTHONPATH="$(cd .. && pwd)"
   export FLASK_APP=run.py
   export FLASK_ENV=development
-  flask run 2>&1 | tee ../backend.log &
+  flask run 2>&1 | tee ../log &
   BACKEND_PID=$!
   cd ../frontend
   npm start 2>&1 | tee ../frontend.log &

@@ -1,11 +1,11 @@
 import os
 import pytest
-from backend.models.user import User
+from models.user import User
 
 @pytest.fixture(autouse=True)
 def seed_users(app):
     # Import and run the seeder in the test app context
-    from backend.dev_seed import seed_dev_data
+    from dev_seed import seed_dev_data
     seed_dev_data(app)
 
 def test_admin_user_seeded(app):

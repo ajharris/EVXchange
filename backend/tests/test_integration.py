@@ -1,7 +1,7 @@
 import pytest
 import responses
-from backend.models.user import User
-from backend.app import db
+from models.user import User
+from app import db
 
 class TestOAuthIntegration:
     """Integration tests for OAuth authentication flow"""

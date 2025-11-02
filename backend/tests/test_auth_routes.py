@@ -3,8 +3,8 @@ import responses
 from unittest.mock import patch, MagicMock
 from flask import url_for, session
 from flask_login import current_user
-from backend.models.user import User
-from backend.app import db
+from models.user import User
+from app import db
 from urllib.parse import urlparse
 
 # Test setting password after OAuth verification
@@ -12,8 +12,8 @@ from urllib.parse import urlparse
 def test_set_password_after_oauth(client, app):
     # Create a user and simulate OAuth login
     with app.app_context():
-        from backend.models.user import User
-        from backend.app import db
+        from models.user import User
+        from app import db
         user = User(email='test@example.com', name='Test User', is_verified=True, google_id='123456789')
         db.session.add(user)
         db.session.commit()

@@ -1,7 +1,7 @@
 import pytest
 from datetime import datetime
-from backend.models.user import User
-from backend.app import db
+from models.user import User
+from app import db
 
 class TestUserModel:
     """Test cases for the User model"""

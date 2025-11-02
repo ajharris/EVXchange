@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
-from backend.app import db
+from app import db
 
 class User(UserMixin, db.Model):
     """User model for authentication and profile management"""

@@ -1,9 +1,9 @@
 import pytest
 import responses
 from unittest.mock import patch, MagicMock
-from backend.models.user import User
+from models.user import User
 from services.oauth import OAuthService
-from backend.app import db
+from app import db
 
 class TestOAuthSecurity:
     """Test cases for OAuth security and edge cases"""

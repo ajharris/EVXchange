@@ -2,7 +2,7 @@ import pytest
 import responses
 import json
 from unittest.mock import patch, MagicMock
-from backend.services.oauth import (
+from services.oauth import (
     GoogleOAuthProvider, 
     FacebookOAuthProvider, 
     LinkedInOAuthProvider,

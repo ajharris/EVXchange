@@ -1,12 +1,12 @@
 
 import pytest
-from backend.models.user import User
+from models.user import User
 
 
 
 def create_user(email, role='user', is_verified=False):
     user = User(email=email, name='Test', role=role, is_verified=is_verified)
-    from backend.app import db
+    from app import db
     db.session.add(user)
     db.session.commit()
     return user

@@ -277,7 +277,7 @@ def health_check():
 
 
 # --- Profile Endpoints ---
-from backend.models.user import User
+from models.user import User
 
 @api_bp.route('/profile', methods=['GET', 'PUT'])
 @login_required
@@ -306,7 +306,7 @@ def profile():
             setattr(user, field, data[field])
             updated = True
     if updated:
-        from backend.app import db
+        from app import db
         db.session.commit()
     return jsonify(user.to_dict())
 

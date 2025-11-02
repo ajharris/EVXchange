@@ -1,8 +1,8 @@
 import pytest
 from flask import url_for
-from backend.models import user as user_model
-from backend.app import create_app
-from backend.dev_seed import seed_dev_data
+from models import user as user_model
+from app import create_app
+from dev_seed import seed_dev_data
 
 @pytest.fixture(scope="module")
 def test_client():
@@ -21,7 +21,7 @@ def set_session_user(client, user_id):
 
 def test_admin_access_granted(test_client):
     # Simulate admin login by setting session
-    from backend.models.user import User
+    from models.user import User
     with test_client.application.app_context():
         admin = User.query.filter_by(role='admin').first()
     set_session_user(test_client, admin.id)
@@ -31,7 +31,7 @@ def test_admin_access_granted(test_client):
 
 def test_non_admin_access_forbidden(test_client):
     # Simulate regular user login by setting session
-    from backend.models.user import User
+    from models.user import User
     with test_client.application.app_context():
         user = User.query.filter_by(role='user').first()
     set_session_user(test_client, user.id)

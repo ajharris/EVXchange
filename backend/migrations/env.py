@@ -5,7 +5,7 @@ from logging.config import fileConfig
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from backend.app import create_app
+from app import create_app
 from flask import current_app
 
 from alembic import context
