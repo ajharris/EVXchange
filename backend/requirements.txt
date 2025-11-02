@@ -24,6 +24,7 @@ Flask-Cors
 Flask-SQLAlchemy
 Flask-Login
 Flask-Migrate
+python-dotenv
 gunicorn
 fastjsonschema==2.21.1
 filelock==3.13.1
